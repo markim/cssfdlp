@@ -1,0 +1,6 @@
+.env
+venv
+temp_extract
+processed_cstrike
+cstrike.zip
+cssfdlp.log
