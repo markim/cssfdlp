@@ -1,0 +1,20 @@
+[
+    {
+        "key": "ctrl+shift+f",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Format All Python Files",
+        "when": "editorTextFocus && resourceExtname == .py"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Lint Python with Flake8",
+        "when": "editorTextFocus && resourceExtname == .py"
+    },
+    {
+        "key": "alt+shift+i",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Sort Imports with isort",
+        "when": "editorTextFocus && resourceExtname == .py"
+    }
+]

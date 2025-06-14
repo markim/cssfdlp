@@ -1,0 +1,80 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Format Python with Black",
+            "type": "shell",
+            "command": ".venv/Scripts/black",
+            "args": ["src/", "cssfdlp.py", "--line-length", "100"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Sort Imports with isort",
+            "type": "shell",
+            "command": ".venv/Scripts/isort",
+            "args": ["src/", "cssfdlp.py", "--profile", "black"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Lint Python with Flake8",
+            "type": "shell",
+            "command": ".venv/Scripts/flake8",
+            "args": ["src/", "cssfdlp.py"],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": {
+                "owner": "flake8",
+                "fileLocation": "absolute",
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(\\w+)\\s+(.*)",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+        {
+            "label": "Format All Python Files",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Sort Imports with isort",
+                "Format Python with Black"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Lint and Format All",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Sort Imports with isort",
+                "Format Python with Black",
+                "Lint Python with Flake8"
+            ],
+            "group": "test"
+        }
+    ]
+}

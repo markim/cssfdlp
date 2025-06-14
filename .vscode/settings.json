@@ -1,0 +1,43 @@
+{
+    "python.defaultInterpreterPath": ".venv/Scripts/python.exe",
+    
+    // Formatting settings
+    "python.formatting.provider": "none",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    
+    // Linting settings
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.lintOnSave": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=100",
+        "--ignore=E203,W503"
+    ],
+    
+    // isort settings
+    "isort.args": [
+        "--profile", "black",
+        "--line-length", "100"
+    ],
+    
+    // Black formatter settings
+    "black-formatter.args": [
+        "--line-length", "100"
+    ],
+    
+    // Editor settings for Python
+    "editor.rulers": [100],
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    
+    // Auto-save
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000
+}

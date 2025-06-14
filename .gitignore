@@ -4,3 +4,8 @@ temp_extract
 processed_cstrike
 cstrike.zip
 cssfdlp.log
+.venv
+cache
+private_key.pem
+private_key.pem.pub
+__pycache__

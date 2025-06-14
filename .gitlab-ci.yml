@@ -1,0 +1,21 @@
+# Include Auto DevOps template
+include:
+  - template: Auto-DevOps.gitlab-ci.yml
+
+variables:
+  # Auto DevOps configuration
+  AUTO_DEVOPS_DOMAIN: $BASE_DOMAIN
+  POSTGRES_ENABLED: false
+  ROLLOUT_RESOURCE_TYPE: deployment
+  
+  # Docker registry settings
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: "/certs"
+  
+  # Application settings
+  PORT: "5000"
+  DOCKERFILE_PATH: "site/Dockerfile"
+  
+  # Environment-specific variables (set these in GitLab CI/CD variables)
+  # BASE_DOMAIN: your-base-domain.com
+  # KUBE_INGRESS_BASE_DOMAIN: your-base-domain.com

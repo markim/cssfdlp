@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/* Global styles for proper height handling */
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+#app {
+	height: 100%;
+}
